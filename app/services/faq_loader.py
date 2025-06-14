@@ -6,10 +6,10 @@ import os
 def cargar_faqs() -> list:
     faqs = []
 
-    # Ruta base relativa
+    # Ruta de archivos
     base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../data"))
 
-    # --- 1. Leer Horarios.xlsx ---
+    # archivo horarios.xlsx
     try:
         horarios_path = os.path.join(base_path, "Horarios.xlsx")
         df = pd.read_excel(horarios_path)
@@ -19,7 +19,7 @@ def cargar_faqs() -> list:
     except Exception as e:
         print(f"[!] Error al leer Horarios.xlsx: {e}")
 
-    # --- 2. Leer Preguntas_Frecuentes.docx ---
+    # archivo preguntas frecuentes.docx
     try:
         docx_path = os.path.join(base_path, "Preguntas_Frecuentes.docx")
         doc = Document(docx_path)
@@ -29,7 +29,7 @@ def cargar_faqs() -> list:
     except Exception as e:
         print(f"[!] Error al leer Preguntas_Frecuentes.docx: {e}")
 
-    # --- 3. Leer Suma_Gana.pdf ---
+    # archivo Suma_Gana.pdf
     try:
         pdf_path = os.path.join(base_path, "Suma_Gana.pdf")
         reader = PdfReader(pdf_path)

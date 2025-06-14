@@ -1,0 +1,73 @@
+{
+  "info": {
+    "name": "Chatbot Supermercado",
+    "_postman_id": "e142765f-bb55-4db4-a7e0-123456789abc",
+    "description": "Colección de endpoints para probar el chatbot de atención al cliente del supermercado.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Registrar cliente nuevo",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"identificacion\": \"123456789\",\n  \"nombre\": \"Juan Pérez\",\n  \"telefono\": \"3101234567\",\n  \"correo\": \"juan@example.com\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/usuarios/registrar",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["usuarios", "registrar"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Verificar cliente frecuente",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/usuarios/verificar/123456789",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["usuarios", "verificar", "123456789"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Enviar pregunta al chatbot",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mensaje\": \"¿Cuál es el horario los domingos?\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/asistente/chat",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["asistente", "chat"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

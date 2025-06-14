@@ -2,11 +2,11 @@ from app.services.nlp_engine import construir_bot
 
 retriever = construir_bot()
 
-print("🤖 Bot listo. Escribe tu pregunta (o 'salir' para terminar)\n")
+print("🤖 Hola, escribe tu pregunta o escribe salir para terminar)\n")
 
 while True:
-    pregunta = input("👤 Tú: ")
-    if pregunta.lower() in ["salir", "exit", "q"]:
+    pregunta = input("👨‍💻​ Usted: ")
+    if pregunta.lower() in ["Salir","salir", "exit","Exit", "q"]:
         print("👋 Adiós.")
         break
 
