@@ -9,7 +9,7 @@ def construir_bot():
 
     documentos = [Document(page_content=texto) for texto in datos_faq if texto.strip()]
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size=2000,  # Aumenta el límite de caracteres por fragmento
+        chunk_size=2000, 
         chunk_overlap=200
     )    
     docs = splitter.split_documents(documentos)

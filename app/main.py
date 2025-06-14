@@ -7,7 +7,7 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Chatbot Retail IA")
 
-# Incluye los routers
+# routers
 app.include_router(users.router, prefix="/usuarios", tags=["Clientes"])
 app.include_router(chat.router, prefix="/asistente", tags=["Asistente"])
 
